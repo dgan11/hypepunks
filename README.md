@@ -10,7 +10,8 @@ Everytime the Generate button is pressed it will create a random combination of 
 in order to create a one-of-a-kind hypepunk.
 
 <br>
-### Try It Here:
+
+### Try It Here
 https://hypepunks.netlify.app/
 
 ### What They Look Like
