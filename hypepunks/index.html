@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>HypePunks Maker</title>
+
+    <script>
+      window.onload = function() {
+				// PUNK
+        var punk = new Image();
+        var punkNum = Math.floor(Math.random() * 5) + 1;
+        var punkName = "./images/punk" + punkNum + ".png";
+        punk.src = punkName;
+
+				// HAT
+				var hat = new Image();
+				var hatNum = Math.floor(Math.random() * 4) + 1;
+				var hatName = "./images/hat0" + hatNum + ".png";
+				//var hatName = "hat02.png"; //size 500 x 500
+				hat.src = hatName;
+
+				// PUNK LOADED
+				punk.onload=function() {
+					buildPunk();
+				}
+
+				// HAT LOADED
+				hat.onload = function () {
+					buildPunk();
+				}
+
+				function buildPunk() {
+					var canvas = document.getElementById('canvas');
+					var ctx = canvas.getContext('2d');
+					var x = 600;
+					canvas.width = x;
+					canvas.height = x;
+					var bgColors = ["blue", "red", "green", "gold"]
+					ctx.fillStyle = bgColors[Math.floor(Math.random() * 4)]
+					ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+					// Draw PUNK
+					ctx.drawImage(punk, ((x - punk.width)/2), 50);
+
+					// DRAW HAT
+					ctx.drawImage(hat, ((x - 450) / 2), -75);
+
+				}
+      
+
+      }  
+    </script>
+
+
+</head>
+
+<body>
+    <div align="center">
+        <h1>HypePunks</h1>
+				<canvas id="canvas" style="border:5px solid #000000;">
+					
+				</canvas>
+
+				<br><br>
+
+				<button onClick="window.location.reload();">Generate hypepunk</button>
+
+
+    </div>
+</body>
+
+</html>
